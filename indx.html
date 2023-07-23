@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div id="container">
+      <section id="navbar-section">
+        <div id="upper">
+          <a href="#" class="tab" onclick="changeTab(event,'site')"
+            ><img alt="logo" src="assets/butterfly.png"
+          /></a>
+          <a href="#" class="tab" onclick="changeTab(event,'search')"
+            ><img alt="logo" src="assets/search.png"
+          /></a>
+        </div>
+        <div id="middle">
+          <a href="#" class="tab active" onclick="changeTab(event,'home')"
+            ><img alt="logo" src="assets/home.png"
+          /></a>
+          <a href="#" class="tab" onclick="changeTab(event,'new')"
+            ><img alt="logo" src="assets/new.png"
+          /></a>
+          <a href="#" class="tab" onclick="changeTab(event,'email')"
+            ><img alt="logo" src="assets/email.png"
+          /></a>
+          <a href="#" class="tab" onclick="changeTab(event,'user')"
+            ><img alt="logo" src="assets/user.png"
+          /></a>
+        </div>
+        <div id="bottom">
+          <a href="#" class="tab" onclick="changeTab(event,'notification')"
+            ><img alt="logo" src="assets/notification.png"
+          /></a>
+          <a href="#" class="tab" onclick="changeTab(event,'smartphone')"
+            ><img alt="logo" src="assets/smartphone.png"
+          /></a>
+        </div>
+      </section>
+      <section id="profile-section">
+        <div id="profile">
+          <img alt="logo" src="assets/butterfly.png" alt="butterfly" />
+          <div id="name">
+            <h1>Hi,Mike</h1>
+            <p>Welcome back</p>
+          </div>
+        </div>
+        <div id="profile-data">
+          <h2>Today</h2>
+          <div class="data">
+            <p id="ac-blc">$19,892</p>
+            <p>Account Balance</p>
+          </div>
+          <div class="data">
+            <p>$4,000</p>
+            <p>Year-To-Date Contributions</p>
+          </div>
+          <div class="data">
+            <p>$1,892</p>
+            <p>Account Balance</p>
+          </div>
+          <button id="profile-btn">I Want To &#9660;</button>
+        </div>
+        <div id="profile-trans">
+          <h2>Recent Transactions</h2>
+          <div class="recent-trans">
+            <p>2020-08-07</p>
+            <p>widthdrawal Transfer to Bank-XXX11</p>
+          </div>
+          <div class="recent-trans">
+            <p>2020-07-09</p>
+            <p>widthdrawal Transfer to Bank-XXX11</p>
+          </div>
+          <div class="recent-trans">
+            <p>2020-06-23</p>
+            <p>widthdrawal Transfer to Bank-XXX11</p>
+          </div>
+        </div>
+      </section>
+      <section id="content-section">
+        <div id="c-upper">
+          <div id="heading">
+            <p>Retirement Income</p>
+            <p>Starting Year 2056</p>
+          </div>
+          <div id="heading-data">
+            <div class="h-container">
+              <p class="h-data">$300,000</p>
+              <p class="h-target">My Goal</p>
+            </div>
+            <div class="h-container">
+              <p class="h-data">59%</p>
+              <p class="h-target">Goal Achived</p>
+            </div>
+            <div class="h-container">
+              <p class="h-data">$300</p>
+              <p class="h-target">Est. Monthly Income</p>
+            </div>
+          </div>
+        </div>
+        <div id="c-middle">
+          <canvas id="bar-data"></canvas>
+        </div>
+        <div id="c-bottom">
+          <div id="cp-heading">
+            <p>How do I compare to my peers?</p>
+            <p>These numbers repressent current goal achivement.</p>
+          </div>
+          <div id="cp-data">
+            <div id="cp-data-value">
+              <div class="cpdv-input">
+                <label for="age">Age:</label>
+                <select id="age">
+                  <option value="18-30">Under 30</option>
+                  <option value="31-40">31-40</option>
+                  <option value="41-50">41-50</option>
+                  <option value="51-65">Over 51</option>
+                </select>
+              </div>
+              <div class="cpdv-input">
+                <label for="Salary">Salary:</label>
+                <select id="salary">
+                  <option value="20-30">K20-K30</option>
+                  <option value="31-40">K31-K40</option>
+                  <option value="41-50">K41-K50</option>
+                  <option value="51-65">K51-K65</option>
+                  <option value="1-5">K100-K500</option>
+                </select>
+              </div>
+              <div class="cpdv-input">
+                <label for="gender">Gender:</label>
+                <select id="gender">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+            </div>
+            <div class="cp-data-chart">
+              <div class="cpdc-circle"id="cpdc-circle1">
+                <span class="cpdc-value">78<sup>%</sup></span>
+              </div>
+              <span class="cpdc-text">Average</span>
+            </div>
+            <div class="cp-data-chart">
+              <div class="cpdc-circle"id="cpdc-circle2">
+                <span class="cpdc-value">95<sup>%</sup></span>
+              </div>
+              <span class="cpdc-text">Top</span>
+            </div>
+            <div class="cp-data-chart">
+              <div class="cpdc-circle"id="cpdc-circle3">
+                <span class="cpdc-value">59<sup>%</sup></span>
+              </div>
+              <span class="cpdc-text">Me</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="sidebar-section">
+        <div id="sbi-update">
+          <h2>Retirement Strategy</h2>
+          <label for="contri">Employee Contributions</label>
+          <div class="sbi-value">
+            <input
+              type="range"
+              name="contri"
+              id="contri"
+              min="0"
+              max="100"
+              value="12"
+            />
+            <span id="contri-value"class="rtr-value">12%</span>
+          </div>
+          <label for="rtr-age">Employee Contributions</label>
+          <div id="rtr-block"class="sbi-value">
+            <input
+              type="range"
+              name="rtr-age"
+              id="rtr-age"
+              min="0"
+              max="100"
+              value="65"
+            />
+            <span id="rtr-age-value"class="rtr-value">12</span>
+          </div>
+          <!--sbi sidebarinput-->
+          <div class="sbi-value">
+            <span>Employee Contribution</span>
+            <span>8.4%</span>
+          </div>
+          <div class="sbi-value">
+            <span>interest Rate</span>
+            <span>5%</span>
+          </div>
+          <button id="sbiv-update">Update</button>
+          <div id="sb-help">
+            <a href="#">View Help Docs&#8811;</a>
+          </div>
+
+        </div>
+        <!--sbm sidebarmore-->
+        <div id="sbm-info">
+            <p>Are you considering a</p>
+            <p>Housing Advance</p>
+            <p>Limited time reduced interset.</p>
+            <a href="#">Learn More &#8811;</a>
+        </div>
+      </section>
+      <div id="corner1"></div>
+      <div id="corner2"></div>
+    </div>
+  </body>
+</html>
